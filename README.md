@@ -1,20 +1,20 @@
 
-# 📘 Mental Health PDF Q&A System using RAG and Ollama
+# Mental Health PDF Q&A System using RAG and Ollama
 
 This project sets up a Retrieval-Augmented Generation (RAG) pipeline to interact with a mental health-related PDF. It extracts the contents, creates embeddings, stores them in a FAISS vector store, and enables question-answering using a local LLM (`deepseek-r1:1.5b`) with fallback support if the context is insufficient.
 
-## 🛠️ Features
+#Features
 
-- ✅ Converts a PDF to Markdown using `docling`
-- ✅ Splits the Markdown into structured chunks based on headers
-- ✅ Uses `Ollama` embeddings (`nomic-embed-text`) for vector representation
-- ✅ Stores and retrieves chunks using `FAISS`
-- ✅ RAG setup using `LangChain` with fallback to model-generated answers if context is insufficient
-- ✅ Outputs bullet-point answers
+-  Converts a PDF to Markdown using `docling`
+-  Splits the Markdown into structured chunks based on headers
+-  Uses `Ollama` embeddings (`nomic-embed-text`) for vector representation
+-  Stores and retrieves chunks using `FAISS`
+-  RAG setup using `LangChain` with fallback to model-generated answers if context is insufficient
+-  Outputs bullet-point answers
 
 ---
 
-## 📂 Project Structure
+# Project Structure
 
 ```
 mental_health_rag/
@@ -27,7 +27,7 @@ mental_health_rag/
 
 ---
 
-## 🔧 Installation
+# Installation
 
 1. **Clone the repo:**
 
@@ -55,7 +55,7 @@ ollama run deepseek-r1:1.5b
 
 ---
 
-## 📄 Required Libraries
+# Required Libraries
 
 Here’s a list of required libraries (add them in `requirements.txt`):
 
@@ -73,7 +73,7 @@ docling
 
 ---
 
-## 🚀 How It Works
+# How It Works
 
 1. **Document Loading & Conversion:**
    - Uses `DocumentConverter` from `docling` to convert PDF to Markdown.
@@ -94,37 +94,37 @@ docling
 
 ---
 
-## 🧠 Example Usage
+# Example Usage
 
 ```python
-question = "What is water?"
+question = "What is distress?"
 for chunk in rag_chain.stream(question):
     print(chunk, end="", flush=True)
 ```
 
 ---
 
-## ✅ Output Sample
+# Output Sample
 
 ```
-Question: What is water?
-- Water is a vital resource for life, often referenced in mental health documents for hydration and wellness.
-- It plays a role in cognitive function and emotional regulation.
-- Lack of water intake can sometimes mimic or exacerbate symptoms of anxiety and fatigue.
+Question: What is distress?
+Distress refers to a state of emotional suffering or mental pain.
+
+It often arises in response to stressful, overwhelming, or traumatic events.
+
+Can manifest as anxiety, sadness, fear, irritability, or a sense of helplessness.
+
+May be short-term (acute) or long-lasting (chronic).
+
+
 --------------------------------------------------
-```
 
----
 
-## 🗂️ Future Improvements
-
-- Add a `Streamlit` UI for interactive Q&A
+# Future Improvements
 - Multi-file PDF support
 - Answer highlighting from source
 - Switch models dynamically (DeepSeek, LLaMA, etc.)
 
 ---
 
-## 👤 Author
-
-**Your Name** – [GitHub](https://github.com/yourname)
+#Author: Yuvika Ajmera
